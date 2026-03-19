@@ -75,7 +75,7 @@ songbook-web-app/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/songbook-web-app.git
+git clone https://github.com/nc133878/songbook-web-app.git
 cd songbook-web-app
 ```
 

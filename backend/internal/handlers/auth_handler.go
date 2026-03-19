@@ -2,6 +2,8 @@ package handlers
 
 import (
 	"net/http"
+	"os"
+	"strconv"
 
 	"songbook/internal/models"
 	"songbook/internal/services"
@@ -55,6 +57,11 @@ func (h *AuthHandler) Login(c *gin.Context) {
 
 func (h *AuthHandler) ChangePassword(c *gin.Context) {
 	userID := c.MustGet("userID").(int)
+
+	if demoID, err := strconv.Atoi(os.Getenv("DEMO_USER_ID")); err == nil && userID == demoID {
+		c.JSON(http.StatusForbidden, gin.H{"error": "password changes are disabled for the demo account"})
+		return
+	}
 
 	var req models.ChangePasswordRequest
 	if err := c.ShouldBindJSON(&req); err != nil {

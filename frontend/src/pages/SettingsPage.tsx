@@ -18,6 +18,12 @@ export default function SettingsPage() {
       setNewPassword('')
       setConfirmPassword('')
     },
+    onError: (error: any) => {
+      const message = error?.response?.data?.error
+      if (message === 'password changes are disabled for the demo account') {
+        toast.error('Password changes are disabled for the demo account.')
+      }
+    },
   })
 
   const mismatch = newPassword !== confirmPassword && confirmPassword !== ''

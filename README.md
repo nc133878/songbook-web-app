@@ -2,7 +2,7 @@
 
 A full-stack web application for music industry professionals to manage songs, collaborators, and royalty split sheets. Built as a portfolio project demonstrating real-world full-stack development with Go and React.
 
-**Live Demo:** _coming soon_
+**Live Demo:** https://songbook-app.netlify.app/
 **Demo account:** `demo@songbook.app` / `demo1234`
 
 ---

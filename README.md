@@ -97,6 +97,12 @@ cd frontend && npm install && cd ..
 DATABASE_URL=your_postgres_connection_string
 PORT=8080
 JWT_SECRET=your_secret_key
+
+# CORS origin for the frontend (defaults to http://localhost:5173)
+FRONTEND_URL=http://localhost:5173
+
+# Optional: set to the demo account's user ID to disable password changes for that account
+DEMO_USER_ID=
 ```
 
 **Frontend** — create `frontend/.env`:
